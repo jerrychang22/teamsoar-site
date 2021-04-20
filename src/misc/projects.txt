@@ -1,0 +1,164 @@
+Name: jc22.me
+Date: Summer 2020
+About: My personal website that describes me, my projects, my work experience and resume, and my contact info. The website was written entirely from scratch in React, served via Nginx, and run on a Raspberry Pi. 
+Tags: Software@Web Development
+Code: https://github.com/jerrychang22/jc22_me
+Images: jc22me_Site.png
+@@@
+Name: 3D Positioner
+Date: Summer 2020
+About: A device that can measure a position in 3D space relative to the device. The device has 3 degrees of freedom - yaw, pitch, and distance - to measure a point in 3D space. The information is relayed to a server via Websockets for responsive data visualization. The device can interface with other projects such as a robotic arm to give additional positioning information and instructions.
+Tags: Design@Software@Electronics@Embedded
+Code: https://github.com/jerrychang22/3D_Positioner
+Images: 3DPositioner_CAD.png@3DPositioner_IRL.png
+@@@
+Name: AR Fishing Rod
+Date: Summer 2020
+About: A 3D printed fishing rod with sensors to create force feedback and simulate a fish fighting the user. The fishing rod also includes an IMU for casting simulation. The physical rod interfaces with a fishing game for an AR experience.
+Tags: Design@Electronics
+Images: ARFishing_CAD.png
+@@@
+Name: Reddit Post Saver
+Date: Summer 2020
+About: A simple script using PRAW to interface with the Reddit API. The script moves all saved posts and comments of a user to a personal subreddit to extend the Reddit list limit of 1000.
+Tags: Software
+Code: https://github.com/jerrychang22/reddit-ur-bot
+@@@
+Name: C++ Cinder Boids
+Date: Summer 2020
+About: An implementation of boids algorithm in C++ using the libCinder library for graphics. The aim was to familiarize myself with the Cinder library for future generative art pieces. The boids algorithm is a modified algorithm to include binning for increased performance.
+Tags: Software@Art
+Code: https://github.com/jerrychang22/CPP-Generative-Art
+Images: Boids_Drawing.png
+@@@
+Name: NASA RMC Lunabotics Team
+Date: Spring 2020
+About: The NASA Robotic Mining Competition or Lunabotics is a competition to build a performant robot to dig and transport a large amount of simulated moon regolith. I led the dispensing team and oversaw the digging team as well. I organized the CAD teams and system organization. 
+Tags: Design@Mechanical@Electronics
+Images: RMC_CAD.png@RMC_IRL.png
+@@@
+Name: ME598 Intro to Robotics Final
+Date: Fall 2019
+About: The objective of the final was to write autonomous software for the iRobot Roomba mobile drivebase to navigate an obstacle course. The obstacle course required computer vision, localization, and sensor fusion. The robot traversed the obstacle course in around 55 seconds.
+Tags: Software
+Code: https://github.com/jerrychang22/ME598_Final
+Images: ME598_Diagram.png@ME598_IRL.png
+@@@
+Name: Numitron Clock
+Date: Fall 2019
+About: A clock made of Numitron tubes and powered by the ATMEGA328P chip and TPIC6B59N shift registers. I built this project for the purpose of learning how to program AVR chips directly and how to use shift registers.
+Tags: Electronics@Embedded
+Images: Numitron_Wiring.png@Numitron_Circuit.png
+@@@
+Name: Speaker Crossover Network
+Date: Fall 2019
+About: A 3rd order Bessel crossover network circuit custom built for a set of tweeter and subwoofer. This project was built for the Engineering Design IV class.
+Tags: Electronics
+Images: SpeakerCrossover_Diagram.png@SpeakerCrossover_Circuit.png
+@@@
+Name: .dotfiles
+Date: Fall 2019
+About: My personal dotfiles and scripts for customizing the look and behavior of various Linux programs that I use daily. The main script 'newrice' features the ability to pull a random wallpaper from either Unsplash or ArtStation and create full color palettes for programs like i3-gaps, kitty-term, polybar, Spotify, neovim, and zathura.
+Tags: Linux
+Code: https://github.com/jerrychang22/.dotfiles
+Images: dotfiles_Main.png@dotfiles_Other.png
+@@@
+Name: Mini Mobile Wheeled Base Robot
+Date: Spring 2019
+About: A small mobile wheeled base robot designed with the intent of becoming a mobile platform for future robotic modules. The drivebase features a large baseplate, easy access electronics compartment, and modular electronics module plates. 
+Tags: Design@Mechanical@Electronics
+Images: ModDrivebase_CAD.png
+@@@
+Name: StuyPulse 2019 - Alfred
+Date: Spring 2019
+About: The FRC robot built for the 'Destination - Deep Space' game. I mentored a design team in the development of the unique suction climber design. The team placed as regional winners at NYC regional and semifinalist at the World Championships Daly Division.@https://www.thebluealliance.com/team/694/2019@https://stuypulse.com/about/history/2019/
+Tags: Mentor@Team@Design@Mechanical
+Images: StuyPulse2019_CAD.png@StuyPulse2019_IRL.png@StuyPulse2019_Suction.png
+@@@
+Name: LED Icosohedron
+Date: Summer 2018
+About: A simple LED light display in the shape of an icosohedron.
+Tags: Electronics
+Images: LED_Ico.png
+@@@
+Name: OpenCV Car Detection
+Date: Summer 2018
+About: A moving car detection program built using OpenCV for the purpose of learning OpenCV. 
+Tags: Computer Vision@Software
+Code: No longer available
+Images: OpenCV_Car.png
+@@@
+Name: Compact Weather Station
+Date: Spring 2018
+About: A compact weather station built on an Arduino Nano base. The weather station comprises of a custom designed anemometer, DHT11 temperature and humidity sensor, and photosensors built into a sliding base for maximum volume and compactness. I designed the full design for the Engineering Design II class.
+Tags: Electronics@Mechanical@Design
+Images: WeatherStation_CAD.png
+@@@
+Name: ASME BattleBots Team
+Date: Spring 2018
+About: The Stevens Institute of Technology's American Society of Mechanical Engineer's (ASME) division built a Battlebot in the interest of participating in the BattleBots show. I helped design and assemble the drivebase which used a unique swerve design.
+Tags: Team@Mechanical@Design
+Images: ASME_Chassis.png@ASME_Swerve.png
+@@@
+Name: StuyPulse 2018 - Wildcard
+Date: Spring 2018
+About: The FRC robot built for the 'Power Up' game. I mentored a design team in the development of a compliant cube intake. The team placed as regional winners at NYC regional and semifinalist at the World Championships Archimedes Division.@https://www.thebluealliance.com/team/694/2018@https://stuypulse.com/about/history/2018/
+Tags: Mentor@Team@Design@Mechanical
+Images: StuyPulse2018_CAD.png@StuyPulse2018_IRL.png
+@@@
+Name: Bingo Simulator
+Date: Fall 2017
+About: A simple bingo simulator to simulate the odds from many bingo boards with the ability to modify the board size and win conditions.
+Tags: Software
+Code: https://github.com/jerrychang22/BingoSim
+@@@
+Name: Simple Graphics Engine
+Date: Spring 2017
+About: A simple graphics engine written in C for the Graphics class.
+Tags: Software@Art
+Code: https://github.com/jerrychang22/image_final
+@@@
+Name: StuyPulse 2017 - Rafael
+Date: Spring 2017
+About: The FRC robot built for the 'Steamworks' 2017 game. I led a team in the design of the integrated hopper and shooter design. We placed as regional finalists at NYC regional and semifinalist at the World Championships Daly Division.@https://www.thebluealliance.com/team/694/2017@https://stuypulse.com/about/history/2017/
+Tags: Team@Design@Mechanical
+Images: StuyPulse2017_CAD.png@StuyPulse2017_IRL.png
+@@@
+Name: Systems Final - Spaceteam
+Date: Fall 2016
+About: The popular mobile game Spaceteam written in C using socket networks as a final project for Systems class.
+Tags: Software@Systems
+Code: https://github.com/jerrychang22/Systems_Final
+@@@
+Name: Shell-shock
+Date: Fall 2016
+About: A shell written in C for the Systems class.
+Tags: Software@Systems
+Code: https://github.com/jerrychang22/shell-shock
+Images: ShellShock_Run.png
+@@@
+Name: Life^2
+Date: Fall 2016 
+About: Life^2 is an website built for gamifying tasks and habits in order to create motivation and keep users on top of their game. I wrote the authorization backend and full AJAX interactability of the front end. This project was created for the Software Development class.
+Tags: Software@Web Development
+Code: https://github.com/aliang8/TeamLAJICK
+Images: LIFE2_Site.png@LIFE2_Code.png
+@@@
+Name: Perlin Terrain Generator
+Date: Spring 2016
+About: A simple terrain generator using Perlin noise to create smooth noise. This was created as a project for AP Computer Science.
+Tags: Software@Art
+Code: No longer available
+Images: Perlin_IRL.png@Perlin_IRL2.png
+@@@
+Name: StuyPulse 2016 - DEStiny
+Date: Spring 2016
+About: The FRC robot built for the 'Stronghold' 2016 game. I led a team in the design of the multi-use arm and machined the parts for the arm and the chassis. We were the winners of the NYC Regional and winners of the World Championships Curie Division, allowing us to play on the Einstein Field.@https://www.thebluealliance.com/team/694/2016@https://stuypulse.com/about/history/2016/
+Tags: Team@Design@Mechanical@Machining
+Images: StuyPulse2016_IRL.png
+@@@
+Name: StuyPulse 2015 - PEGasus1
+Date: Spring 2015
+About: The FRC robot built for the 'Recycle Rush' 2015 game. Our robot featured a unique design with the ability to pick up totes in both short and long orientations. We placed as regional finalists at the NYC Regional.@https://www.thebluealliance.com/team/694/2015@https://stuypulse.com/about/history/2015/
+Tags: Team@Mechanical@Design
+Images: StuyPulse2015_CAD.png@StuyPulse2015_IRL.png
