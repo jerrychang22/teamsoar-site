@@ -2,6 +2,8 @@ import React from 'react';
 import styled, { css } from 'styled-components';
 import { Link } from 'react-router-dom';
 
+import TeamSoarLogo from '../misc/teamsoarlogo.png';
+
 import { lerp, lerp2 } from '../utils/lerp.js';
 import { scrollSwitch, navMinHeight, navMaxHeight, logoMinSize, logoMaxSize, logoFontScale, logoMinLeft, butMinSize, butMaxSize, hrMinWidth, throttleTime } from '../utils/constants.js';
 
@@ -48,17 +50,15 @@ function NavBar(props) {
     }
 
     return ( 
-        <StyledNavBar height={navMinHeight} pattern={props.pattern}>
+        <StyledNavBar>
 
             <Link to="/" onClick={navHomeScroll}>
-                <StyledLogo size={logoMinSize} left={logoMinLeft}> 
-                    <div> Team </div>
-                </StyledLogo>
+                <StyledLogo src={TeamSoarLogo}/> 
             </Link>
             
             <StyledButtonGroup size={butMinSize} right={butMinSize} >
-                <StyledNavButton to="/projects" onClick={navContentScroll}> Projects </StyledNavButton>
-                <StyledNavButton to="/about" onClick={navContentScroll}> About    </StyledNavButton>
+                <StyledNavButton to="/projects" onClick={navContentScroll}> Project ModStore </StyledNavButton>
+                <StyledNavButton to="/about" onClick={navContentScroll}> About Us   </StyledNavButton>
                 <StyledNavButton to="/contact" onClick={navContentScroll}> Contact  </StyledNavButton>
             
             </StyledButtonGroup>
@@ -68,40 +68,39 @@ function NavBar(props) {
     );
 }
 
-const StyledLogo = styled.div`
+const StyledLogo = styled.img`
     color: #000000;    
     display: inline-block;
-    width: 1.2em;
-    font-size: ${props => props.size}em; 
+    height: 150%;
     position: absolute;
     top: 50%;
-    left: ${props => props.left}%;
+    left: 4%;
     transform: translate(-50%, -50%);
-    text-align: center;
 `;
 
 const StyledButtonGroup = styled.div`
     display: inline-block;
     position: absolute;
     top: 50%;
-    right: ${props => props.right}%;
+    right: 12%;
     transform: translate(50%, -50%);
 `;
 
 const StyledNavButton = styled(Link)`
     display: inline-block;
-    color: #06B25F;
+    color: #000000;
     font-size: 1em;
     margin: 1vw;
     padding: 0.25em 1em;
-    border: 2px solid #06B25F;
+    border: 2px solid #000000;
     border-radius: 3px;
     text-decoration: none;
     background-color: #FFFFFF;
+    font-weight: 200;
 `;
 
 const StyledRule = styled.hr`
-    color: #06B25F;
+    color: #000000;
     width: ${props => props.width}vw;
     position: absolute;
     bottom: 0;
@@ -111,7 +110,6 @@ const StyledRule = styled.hr`
 
 const StyledNavBar = styled.div`
     
-    background-image: url(${props => props.pattern});
     background-repeat: no-repeat;
     background-size: cover;
     
@@ -119,8 +117,9 @@ const StyledNavBar = styled.div`
     display: inline-block;
     z-index: 1000;
     position: fixed;
-    height: ${props => props.height}vh;
+    height: 7vh;
     width: 100%;
+    top: 0;
 `;
 
 //export { StyledNavBar };

@@ -78,9 +78,10 @@ function Home(props){
                             <XYRailsIMG src={XYRailsPNG} left={lerp(xyrailsMin, xyrailsMax, props.height)}/>
                         </ExplodedImageContainer>
                         <InfoBlock>
-                            <p>Team</p>
-                            <p>SOAR</p>
-                            <p>Storage, Organization, Automation, Retrieval</p>
+                            <MainText>Team</MainText>
+                            <MainText>SOAR</MainText>
+                            <SubText>Storage, Organization,</SubText> 
+                            <SubText>Automation, Retrieval</SubText>
                         </InfoBlock>
                     </ResumeContainer>
                 </div>
@@ -145,8 +146,8 @@ const WhoText = styled.div`
 `;
 
 const BreakBlock = styled.div`
-    border-top: 2px solid #06B25F; 
-    border-bottom: 2px solid #06B25F; 
+    border-top: 2px solid #000000; 
+    border-bottom: 2px solid #000000; 
     height: 30vh;
     display: flex;
     align-items: center;
@@ -258,10 +259,28 @@ const XYRailsIMG = styled.img`
 `;
 
 const InfoBlock = styled.div`
-    position: absolute;
-    margin-top: 10%;
-    left: 63%;
-    font-size: 5em;
+    position: relative;
+    margin-top: 35vh;
+    left: 65%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align:center;
+`;
+
+const MainText = styled.p`
+    font-size: 9em;
+    margin-top: -12%;
+    margin-bottom: 0;
+    font-family: "MontserratThin" !important;
+    font-weight: 100;
+`;
+
+const SubText = styled.p`
+    font-size: 2.5em;
+    margin-top: 0;
+    margin-bottom: 0;
+    font-weight: 200;
 `;
 
 export { Home };
