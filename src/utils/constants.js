@@ -5,7 +5,7 @@ export const throttleTime = 100;
 
 export const navMinHeight = 5;
 export const navMaxHeight = 70;
-export const mainMaxHeight = 200;
+export const mainMaxHeight = 235;
 
 export const logoMinSize = 2;
 export const logoMaxSize = 10;
@@ -38,6 +38,6 @@ export const xyrailsMin = 14;
 export const xyrailsMax = 38;
 export const xyrailsDef = 4;
 
-export const cadUpShift = 70;
+export const cadUpShift = 45;
 
 export const projs = [...Array(10).keys()];

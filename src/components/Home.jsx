@@ -61,7 +61,7 @@ function Home(props){
     }
 
     function cadHeight(t, def){
-        return (t < 1) ? def : lerp(def, def - cadUpShift, t - 1);
+        return (t < 2) ? def : lerp(def, def - cadUpShift, t - 2);
     }
 
     /*
@@ -71,7 +71,7 @@ function Home(props){
     */
 
     return (<div>
-                <div style={{height: mainMaxHeight + 'vh'}}>
+                <div style={{height: mainMaxHeight + 'vh', position: 'relative'}}>
                     <ResumeContainer>
                         <ExplodedImageContainer>
                             <CartIMG src={CartPNG} left={lerp(cartMin, cartMax, props.height)} h={cadHeight(props.height, cartDef)}/>
@@ -88,6 +88,11 @@ function Home(props){
                             <SubText>Automation, Retrieval</SubText>
                         </InfoBlock>
                     </ResumeContainer>
+                    <Label style={{bottom: '6%', left: '10%'}}>Housing</Label>
+                    <Label style={{bottom: '25%', left: '47%'}}>Manipulator</Label>
+                    <Label style={{bottom: '2%', left: '75%'}}>Cart</Label>
+                    <Label style={{bottom: '15%', left: '64%'}}>End Effector</Label>
+                    <Label style={{bottom: '23%', left: '73%'}}>Shelf</Label>
                 </div>
 
                 <WhoImage>
@@ -95,31 +100,31 @@ function Home(props){
                         <WhoText>
                             <p>
                             </p>
-                            <StyledNavButton to='/about' onClick={navContentScroll}> Learn more about me</StyledNavButton>  
                         </WhoText>
                     </WhoBlock>
                 </WhoImage>
                 <BreakBlock>
-                    Check out some of the things I've done
+                    <p style={{marginBottom: '-2%'}}>ModStore takes the functionality and efficiency of automated warehouse storage systems</p>
+                    <p> and scales it down into the corner of any room</p>
                 </BreakBlock>
                 
                 <ProjectAndWork>
                     <HomeProject>
                         <ShadowBlock>
-                            <div> Projects </div>
-                            <StyledNavButton to='/projects' onClick={navContentScroll}> Projects </StyledNavButton>
+                            <div> Learn more about ModStore </div>
+                            <StyledNavButton to='/projects' onClick={navContentScroll}> ModStore </StyledNavButton>
                         </ShadowBlock>
                     </HomeProject>
                     <HomeWork>
                         <ShadowBlock>
-                            <div> Work Experience </div>
-                            <StyledNavButton to='/resume' onClick={navContentScroll}> Resume </StyledNavButton>
+                            <div> Learn about the team </div>
+                            <StyledNavButton to='/about' onClick={navContentScroll}> About Us </StyledNavButton>
                         </ShadowBlock>
                     </HomeWork>
                 </ProjectAndWork>
 
                 <BreakBlock>
-                    Contact me
+                    Contact the team!
                 </BreakBlock>
             </div>);
 }
@@ -128,7 +133,7 @@ const WhoImage = styled.div`
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    height: 100vh;
+    height: 60vh;
     width: 100%;
 `;
 
@@ -154,12 +159,14 @@ const BreakBlock = styled.div`
     border-bottom: 2px solid #000000; 
     height: 30vh;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     font-size: 1em;
     color: black;
     text-align: center;
     font-size: 2em;
+    font-weight: 200;
 `;
 
 const ProjectAndWork = styled.div`
@@ -174,13 +181,14 @@ const HomeProject = styled.div`
     flex-basis: 640px;
 
     background-size: cover;
-    height: 90vh;
+    height: 40vh;
 
     justify-content: center;
     align-items: center;
     text-align: center;
     font-size: 2em;
     color: white;
+    font-weight: 200;
 `;
 
 const HomeWork = styled.div`
@@ -190,13 +198,14 @@ const HomeWork = styled.div`
 
     background-size: cover;
     background-position: center;
-    height: 90vh;
+    height: 40vh;
 
     justify-content: center;
     align-items: center;
     text-align: center;
     font-size: 2em;
     color: white;
+    font-weight: 200;
 `;
 
 const ShadowBlock = styled.div`
@@ -285,6 +294,12 @@ const SubText = styled.p`
     font-size: 2.5em;
     margin-top: 0;
     margin-bottom: 0;
+    font-weight: 200;
+`;
+
+const Label = styled.p`
+    position: absolute;
+    font-size: 3em;
     font-weight: 200;
 `;
 
