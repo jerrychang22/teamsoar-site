@@ -13,9 +13,9 @@ import HousingOPNG from '../misc/housing_over.png';
 import ShelfPNG from '../misc/shelf.png';
 import XYRailsPNG from '../misc/xyrails.png';
 
-import { lerp, lerp2 } from '../utils/lerp.js';
+import { lerp, lerp2, lerp3 } from '../utils/lerp.js';
 import { scrollSwitch, navMinHeight, navMaxHeight, mainMaxHeight, logoMinSize, logoMaxSize, logoFontScale, logoMinLeft, butMinSize, butMaxSize, hrMinWidth, throttleTime } from '../utils/constants.js';
-import { cartMin, cartMax, eecMin, eecMax, housingUMin, housingUMax, housingOMin, housingOMax, shelfMin, shelfMax, xyrailsMin, xyrailsMax } from '../utils/constants.js';
+import { cartMin, cartMax, cartDef, eecMin, eecMax, eecDef, housingUMin, housingUMax, housingUDef, housingOMin, housingOMax, housingODef, shelfMin, shelfMax, shelfDef, xyrailsMin, xyrailsMax, xyrailsDef, cadUpShift } from '../utils/constants.js';
 
 function navContentScroll2(props, e){
     if (props.height < 1){
@@ -60,6 +60,10 @@ function Home(props){
             });
     }
 
+    function cadHeight(t, def){
+        return (t < 1) ? def : lerp(def, def - cadUpShift, t - 1);
+    }
+
     /*
     function navContentScroll(e){
         return navContentScroll2(props, e);
@@ -70,12 +74,12 @@ function Home(props){
                 <div style={{height: mainMaxHeight + 'vh'}}>
                     <ResumeContainer>
                         <ExplodedImageContainer>
-                            <CartIMG src={CartPNG} left={lerp(cartMin, cartMax, props.height)}/>
-                            <EECIMG src={EECPNG} left={lerp(eecMin, eecMax, props.height)}/>
-                            <HousingUIMG src={HousingUPNG} left={lerp(housingUMin, housingUMax, props.height)} />
-                            <HousingOIMG src={HousingOPNG} left={lerp(housingOMin, housingOMax, props.height)} />
-                            <ShelfIMG src={ShelfPNG} left={lerp(shelfMin, shelfMax, props.height)}/>
-                            <XYRailsIMG src={XYRailsPNG} left={lerp(xyrailsMin, xyrailsMax, props.height)}/>
+                            <CartIMG src={CartPNG} left={lerp(cartMin, cartMax, props.height)} h={cadHeight(props.height, cartDef)}/>
+                            <EECIMG src={EECPNG} left={lerp(eecMin, eecMax, props.height)} h={cadHeight(props.height, eecDef)}/>
+                            <HousingUIMG src={HousingUPNG} left={lerp(housingUMin, housingUMax, props.height)} h={cadHeight(props.height, housingUDef)} />
+                            <HousingOIMG src={HousingOPNG} left={lerp(housingOMin, housingOMax, props.height)} h={cadHeight(props.height, housingODef)} />
+                            <ShelfIMG src={ShelfPNG} left={lerp(shelfMin, shelfMax, props.height)} h={cadHeight(props.height, shelfDef)}/>
+                            <XYRailsIMG src={XYRailsPNG} left={lerp(xyrailsMin, xyrailsMax, props.height)} h={cadHeight(props.height, xyrailsDef)}/>
                         </ExplodedImageContainer>
                         <InfoBlock>
                             <MainText>Team</MainText>
@@ -219,41 +223,42 @@ const ExplodedImageContainer = styled.div`
 
 const CartIMG = styled.img`
     position: absolute;
-    margin-top: 12%;
+    margin-top: ${props => props.h}%;
     left: ${props => props.left}%;
     z-index: 3;
 `;
 
 const EECIMG = styled.img`
     position: absolute;
-    margin-top: 10%;
+    margin-top:${props => props.h}%;
     left: ${props => props.left}%;
     z-index: 6;
 `;
 
 const HousingUIMG = styled.img`
     position: absolute;
+    margin-top:${props => props.h}%; 
     left: ${props => props.left}%;
     z-index: 1;
 `;
 
 const HousingOIMG = styled.img`
     position: absolute;
-    margin-top: 5.4%;
+    margin-top: ${props => props.h}%;
     left: ${props => props.left}%;
     z-index: 6;
 `;
 
 const ShelfIMG = styled.img`
     position: absolute;
-    margin-top: 4%;
+    margin-top: ${props => props.h}%;
     left: ${props => props.left}%;
     z-index: 2;
 `;
 
 const XYRailsIMG = styled.img`
     position: absolute;
-    margin-top: 4%;
+    margin-top: ${props => props.h}%;
     left: ${props => props.left}%;
     z-index: 5;
 `;

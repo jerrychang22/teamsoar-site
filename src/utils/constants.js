@@ -21,15 +21,23 @@ export const maxBlackout = 0.8;
 
 export const cartMin = 12;
 export const cartMax = 50;
+export const cartDef = 12;
 export const eecMin = 15;
 export const eecMax = 57;
+export const eecDef = 10;
 export const housingUMin = 13;
 export const housingUMax = 0;
+export const housingUDef = 0;
 export const housingOMin = 13.4;
 export const housingOMax = 0.4;
+export const housingODef = 5.4;
 export const shelfMin = 14;
 export const shelfMax = 75;
+export const shelfDef = 4;
 export const xyrailsMin = 14;
 export const xyrailsMax = 38;
+export const xyrailsDef = 4;
+
+export const cadUpShift = 70;
 
 export const projs = [...Array(10).keys()];

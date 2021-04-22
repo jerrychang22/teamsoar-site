@@ -26,7 +26,7 @@ function App(){
     //Define triggering function
     const handleScroll = () => {
         const scroll = window.scrollY / window.innerHeight;
-        (scroll * 100 > scrollSwitch) ? setPercent(1) : setPercent( lerp2(0, scrollSwitch / 100, 0, 1, scroll) );
+        setPercent( lerp2(0, scrollSwitch / 100, 0, 1, scroll) );
     }
 
     //Attach event and hook
