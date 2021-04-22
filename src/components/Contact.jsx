@@ -9,14 +9,22 @@ function Contact(props){
     return (
             <>
             <ContactBody>
+              <ContactInfo>
+                        <div>
+                            <img src={GithubIcon} width={'60vw'}/>
+                        </div>
+                        <div style={{width: '1vw'}}/>
+                        <div>
+                            Professor Long Wang : <a href="mailto:lwang4@stevens.edu"> lwang4@stevens.edu </a> <br/>
+                        </div>
+            </ContactInfo>
                     <ContactInfo>
                         <div>
                             <img src={EmailIcon} width={'60vw'}/>
                         </div>
                         <div style={{width: '1vw'}}/>
-                        <div> 
-                            Primary : <a href="mailto:jerrychang22@gmail.com"> jerrychang22@gmail.com </a> <br/>
-                            Edu : <a href="mailto:jchang5@stevens.edu"> jchang5@stevens.edu </a> <br/>
+                        <div>
+                            Kelton Bernhard : <a href="mailto:kbernhar@stevens.edu"> kbernhar@stevens.edu </a> <br/>
                         </div>
                     </ContactInfo>
                     <ContactInfo>
@@ -24,8 +32,8 @@ function Contact(props){
                             <img src={LinkedinIcon} width={'60vw'}/>
                         </div>
                         <div style={{width: '1vw'}}/>
-                        <div> 
-                            LinkedIn : <a href="https://linkedin.com/in/jerrychang22"> linkedin.com/in/jerrychang22 </a> <br/>
+                        <div>
+                            Jerry Chang : <a href="mailto:jchang5@stevens.edu"> jchang5@stevens.edu </a> <br/>
                         </div>
                     </ContactInfo>
                     <ContactInfo>
@@ -33,8 +41,35 @@ function Contact(props){
                             <img src={GithubIcon} width={'60vw'}/>
                         </div>
                         <div style={{width: '1vw'}}/>
-                        <div> 
-                            Github : <a href="https://github.com/jerrychang22"> github.com/jerrychang22 </a> <br/>
+                        <div>
+                            Chris Cowan : <a href="mailto:ccowan@stevens.edu"> ccowan@stevens.edu </a> <br/>
+                        </div>
+                    </ContactInfo>
+                    <ContactInfo>
+                        <div>
+                            <img src={GithubIcon} width={'60vw'}/>
+                        </div>
+                        <div style={{width: '1vw'}}/>
+                        <div>
+                            Aman Minhas : <a href="mailto:aminhas@stevens.edu"> aminhas@stevens.edu </a> <br/>
+                        </div>
+                    </ContactInfo>
+                    <ContactInfo>
+                        <div>
+                            <img src={GithubIcon} width={'60vw'}/>
+                        </div>
+                        <div style={{width: '1vw'}}/>
+                        <div>
+                            Ryan Rosenfeld : <a href="mailto:rrosenfe@stevens.edu"> rrosenfe@stevens.edu </a> <br/>
+                        </div>
+                    </ContactInfo>
+                    <ContactInfo>
+                        <div>
+                            <img src={GithubIcon} width={'60vw'}/>
+                        </div>
+                        <div style={{width: '1vw'}}/>
+                        <div>
+                            Deven Woolford : <a href="mailto:dwoolfor@stevens.edu"> dwoolfor@stevens.edu </a> <br/>
                         </div>
                     </ContactInfo>
             </ContactBody>
@@ -48,7 +83,7 @@ function ContactFooter(props){
                 <Icon src={EmailIcon}/>
                 Email
             </ContactItem>
-            
+
             <ContactItem href="https://www.linkedin.com/in/jerrychang22/">
                 <Icon src={LinkedinIcon}/>
                 LinkedIn
@@ -58,8 +93,8 @@ function ContactFooter(props){
                 <Icon src={GithubIcon}/>
                 Github
             </ContactItem>
-            
-            <Copyright>Jerry Chang @ 2020</Copyright> 
+
+            <Copyright>Jerry Chang @ 2020</Copyright>
         </StyledContactFooter>
     );
 }
@@ -84,7 +119,7 @@ const ContactInfo = styled.div`
 `;
 
 const StyledContactFooter = styled.div`
-    background-color: #06B25F; 
+    background-color: #06B25F;
     height: 10vh;
     display: flex;
     align-items: center;
@@ -101,7 +136,7 @@ const ContactItem = styled.a`
     margin: 5vw;
     text-decoration: none;
     font-size: 1.5em;
-    
+
     &:link, &:visited {
         color: white;
     }
@@ -121,4 +156,3 @@ const Copyright = styled.div`
 `;
 
 export { Contact, ContactFooter };
-
