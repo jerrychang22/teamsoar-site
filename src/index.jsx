@@ -12,7 +12,8 @@ import { lerp, lerp2 } from './utils/lerp.js';
 import { scrollSwitch, throttleTime } from './utils/constants.js';
 
 import styled, { css, createGlobalStyle } from 'styled-components';
-import JBM from './misc/Montserrat-ExtraLight.ttf';
+import Montserrat from './misc/Montserrat-ExtraLight.ttf';
+import MontserratThin from './misc/Montserrat-Thin.ttf';
 import Pattern from './misc/teamsoar.png';
 
 
@@ -25,7 +26,7 @@ function App(){
     //Define triggering function
     const handleScroll = () => {
         const scroll = window.scrollY / window.innerHeight;
-        (scroll * 100 > scrollSwitch) ? setPercent(1) : setPercent( lerp2(0, scrollSwitch / 100, 0, 1, scroll) );
+        setPercent( lerp2(0, scrollSwitch / 100, 0, 1, scroll) );
     }
 
     //Attach event and hook
@@ -81,12 +82,17 @@ const ContentBody = styled.div`
 
 const GlobalStyle = createGlobalStyle`
     @font-face {
-        font-family: 'JetBrainsMono';
-        src: url('${JBM}') format('ttf');
+        font-family: 'Montserrat';
+        src: url('${Montserrat}') format('ttf');
+    }
+    
+    @font-face {
+        font-family: 'MontserratThin';
+        src: url('${MontserratThin}') format('ttf');
     }
 
     * {
-        font-family: "JetBrainsMono" !important;
+        font-family: "Montserrat" !important;
     }
 
     body {

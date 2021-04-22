@@ -13,9 +13,9 @@ import HousingOPNG from '../misc/housing_over.png';
 import ShelfPNG from '../misc/shelf.png';
 import XYRailsPNG from '../misc/xyrails.png';
 
-import { lerp, lerp2 } from '../utils/lerp.js';
+import { lerp, lerp2, lerp3 } from '../utils/lerp.js';
 import { scrollSwitch, navMinHeight, navMaxHeight, mainMaxHeight, logoMinSize, logoMaxSize, logoFontScale, logoMinLeft, butMinSize, butMaxSize, hrMinWidth, throttleTime } from '../utils/constants.js';
-import { cartMin, cartMax, eecMin, eecMax, housingUMin, housingUMax, housingOMin, housingOMax, shelfMin, shelfMax, xyrailsMin, xyrailsMax } from '../utils/constants.js';
+import { cartMin, cartMax, cartDef, eecMin, eecMax, eecDef, housingUMin, housingUMax, housingUDef, housingOMin, housingOMax, housingODef, shelfMin, shelfMax, shelfDef, xyrailsMin, xyrailsMax, xyrailsDef, cadUpShift } from '../utils/constants.js';
 
 function navContentScroll2(props, e){
     if (props.height < 1){
@@ -60,6 +60,10 @@ function Home(props){
             });
     }
 
+    function cadHeight(t, def){
+        return (t < 2) ? def : lerp(def, def - cadUpShift, t - 2);
+    }
+
     /*
     function navContentScroll(e){
         return navContentScroll2(props, e);
@@ -67,22 +71,28 @@ function Home(props){
     */
 
     return (<div>
-                <div style={{height: mainMaxHeight + 'vh'}}>
+                <div style={{height: mainMaxHeight + 'vh', position: 'relative'}}>
                     <ResumeContainer>
                         <ExplodedImageContainer>
-                            <CartIMG src={CartPNG} left={lerp(cartMin, cartMax, props.height)}/>
-                            <EECIMG src={EECPNG} left={lerp(eecMin, eecMax, props.height)}/>
-                            <HousingUIMG src={HousingUPNG} left={lerp(housingUMin, housingUMax, props.height)} />
-                            <HousingOIMG src={HousingOPNG} left={lerp(housingOMin, housingOMax, props.height)} />
-                            <ShelfIMG src={ShelfPNG} left={lerp(shelfMin, shelfMax, props.height)}/>
-                            <XYRailsIMG src={XYRailsPNG} left={lerp(xyrailsMin, xyrailsMax, props.height)}/>
+                            <CartIMG src={CartPNG} left={lerp(cartMin, cartMax, props.height)} h={cadHeight(props.height, cartDef)}/>
+                            <EECIMG src={EECPNG} left={lerp(eecMin, eecMax, props.height)} h={cadHeight(props.height, eecDef)}/>
+                            <HousingUIMG src={HousingUPNG} left={lerp(housingUMin, housingUMax, props.height)} h={cadHeight(props.height, housingUDef)} />
+                            <HousingOIMG src={HousingOPNG} left={lerp(housingOMin, housingOMax, props.height)} h={cadHeight(props.height, housingODef)} />
+                            <ShelfIMG src={ShelfPNG} left={lerp(shelfMin, shelfMax, props.height)} h={cadHeight(props.height, shelfDef)}/>
+                            <XYRailsIMG src={XYRailsPNG} left={lerp(xyrailsMin, xyrailsMax, props.height)} h={cadHeight(props.height, xyrailsDef)}/>
                         </ExplodedImageContainer>
                         <InfoBlock>
-                            <p>Team</p>
-                            <p>SOAR</p>
-                            <p>Storage, Organization, Automation, Retrieval</p>
+                            <MainText>Team</MainText>
+                            <MainText>SOAR</MainText>
+                            <SubText>Storage, Organization,</SubText> 
+                            <SubText>Automation, Retrieval</SubText>
                         </InfoBlock>
                     </ResumeContainer>
+                    <Label style={{bottom: '6%', left: '10%'}}>Housing</Label>
+                    <Label style={{bottom: '25%', left: '47%'}}>Manipulator</Label>
+                    <Label style={{bottom: '2%', left: '75%'}}>Cart</Label>
+                    <Label style={{bottom: '15%', left: '64%'}}>End Effector</Label>
+                    <Label style={{bottom: '23%', left: '73%'}}>Shelf</Label>
                 </div>
 
                 <WhoImage>
@@ -90,31 +100,31 @@ function Home(props){
                         <WhoText>
                             <p>
                             </p>
-                            <StyledNavButton to='/about' onClick={navContentScroll}> Learn more about me</StyledNavButton>  
                         </WhoText>
                     </WhoBlock>
                 </WhoImage>
                 <BreakBlock>
-                    Check out some of the things I've done
+                    <p style={{marginBottom: '-2%'}}>ModStore takes the functionality and efficiency of automated warehouse storage systems</p>
+                    <p> and scales it down into the corner of any room</p>
                 </BreakBlock>
                 
                 <ProjectAndWork>
                     <HomeProject>
                         <ShadowBlock>
-                            <div> Projects </div>
-                            <StyledNavButton to='/projects' onClick={navContentScroll}> Projects </StyledNavButton>
+                            <div> Learn more about ModStore </div>
+                            <StyledNavButton to='/projects' onClick={navContentScroll}> ModStore </StyledNavButton>
                         </ShadowBlock>
                     </HomeProject>
                     <HomeWork>
                         <ShadowBlock>
-                            <div> Work Experience </div>
-                            <StyledNavButton to='/resume' onClick={navContentScroll}> Resume </StyledNavButton>
+                            <div> Learn about the team </div>
+                            <StyledNavButton to='/about' onClick={navContentScroll}> About Us </StyledNavButton>
                         </ShadowBlock>
                     </HomeWork>
                 </ProjectAndWork>
 
                 <BreakBlock>
-                    Contact me
+                    Contact the team!
                 </BreakBlock>
             </div>);
 }
@@ -123,7 +133,7 @@ const WhoImage = styled.div`
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    height: 100vh;
+    height: 60vh;
     width: 100%;
 `;
 
@@ -145,16 +155,18 @@ const WhoText = styled.div`
 `;
 
 const BreakBlock = styled.div`
-    border-top: 2px solid #06B25F; 
-    border-bottom: 2px solid #06B25F; 
+    border-top: 2px solid #000000; 
+    border-bottom: 2px solid #000000; 
     height: 30vh;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     font-size: 1em;
     color: black;
     text-align: center;
     font-size: 2em;
+    font-weight: 200;
 `;
 
 const ProjectAndWork = styled.div`
@@ -169,13 +181,14 @@ const HomeProject = styled.div`
     flex-basis: 640px;
 
     background-size: cover;
-    height: 90vh;
+    height: 40vh;
 
     justify-content: center;
     align-items: center;
     text-align: center;
     font-size: 2em;
     color: white;
+    font-weight: 200;
 `;
 
 const HomeWork = styled.div`
@@ -185,13 +198,14 @@ const HomeWork = styled.div`
 
     background-size: cover;
     background-position: center;
-    height: 90vh;
+    height: 40vh;
 
     justify-content: center;
     align-items: center;
     text-align: center;
     font-size: 2em;
     color: white;
+    font-weight: 200;
 `;
 
 const ShadowBlock = styled.div`
@@ -218,50 +232,75 @@ const ExplodedImageContainer = styled.div`
 
 const CartIMG = styled.img`
     position: absolute;
-    margin-top: 12%;
+    margin-top: ${props => props.h}%;
     left: ${props => props.left}%;
     z-index: 3;
 `;
 
 const EECIMG = styled.img`
     position: absolute;
-    margin-top: 10%;
+    margin-top:${props => props.h}%;
     left: ${props => props.left}%;
     z-index: 6;
 `;
 
 const HousingUIMG = styled.img`
     position: absolute;
+    margin-top:${props => props.h}%; 
     left: ${props => props.left}%;
     z-index: 1;
 `;
 
 const HousingOIMG = styled.img`
     position: absolute;
-    margin-top: 5.4%;
+    margin-top: ${props => props.h}%;
     left: ${props => props.left}%;
     z-index: 6;
 `;
 
 const ShelfIMG = styled.img`
     position: absolute;
-    margin-top: 4%;
+    margin-top: ${props => props.h}%;
     left: ${props => props.left}%;
     z-index: 2;
 `;
 
 const XYRailsIMG = styled.img`
     position: absolute;
-    margin-top: 4%;
+    margin-top: ${props => props.h}%;
     left: ${props => props.left}%;
     z-index: 5;
 `;
 
 const InfoBlock = styled.div`
+    position: relative;
+    margin-top: 35vh;
+    left: 65%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align:center;
+`;
+
+const MainText = styled.p`
+    font-size: 9em;
+    margin-top: -12%;
+    margin-bottom: 0;
+    font-family: "MontserratThin" !important;
+    font-weight: 100;
+`;
+
+const SubText = styled.p`
+    font-size: 2.5em;
+    margin-top: 0;
+    margin-bottom: 0;
+    font-weight: 200;
+`;
+
+const Label = styled.p`
     position: absolute;
-    margin-top: 10%;
-    left: 63%;
-    font-size: 5em;
+    font-size: 3em;
+    font-weight: 200;
 `;
 
 export { Home };
