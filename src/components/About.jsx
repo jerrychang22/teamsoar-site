@@ -8,13 +8,14 @@ function About(props) {
         <div>
             <h1> About </h1>
 
-            <AboutContainer>            
+            <AboutContainer>
                 <Photo src={JCPNG}/>
                 <InfoBlock>
-                    <p> My name is <b>JerEEEEEEEEEEEEry Chang</b> </p>
-                    <p> I'm a rising senior obtaining a mechanical engineering degree. I was raised in New York City and in high school I joined the school's FIRST Robotics team and would since be in love with the world of robotics. </p>
-                    <p> I believe in understanding the fundamentals and building quality. Whether it's the design, the circuitry, or the programming, I like building the project from the ground up and learning as much as I can. Extensibility is very important to me. Making something easier to develop, maintain, and upgrade creates long-lasting and less headache-inducing products.</p>
-                </InfoBlock>
+                    <p><b>Team SOAR</b> </p>
+                    <p>We are Team SOAR, a group of engineers committed to developing small-scale storage solutions that can grow with your business. Our product ModStore is a fully customizable and modular storage and retrieval system that keeps the workspace clean and tracks specific data about the stored materials. </p>
+                    <p>ModStore is designed with your company in mind. All aspects of the system are designed to transport and store any products imaginable. ModStore also helps keep track of key data about each of your products to make retrieval fast and accurate to help save your business money. </p>
+                	  <p>The prototype version of ModStore has been designed for Infineum, a subsidiary of Exxon and Shell and a world leader in industrial fuel additives testing. The cart has been designed to carry up to four bottles and the main computer keeps track of information about the fluids being stored including expiration dates to minimise waste.</p>
+	</InfoBlock>
             </AboutContainer>
         </div>
     );
